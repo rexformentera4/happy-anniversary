@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Queen 🌸</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(-45deg, #ffe4e1, #ffb6c1, #ffc0cb, #f8bbd0);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            font-family: 'Nunito', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            text-align: center;
+            color: #d81b60;
+            touch-action: manipulation; 
+            transition: background 2s ease; /* For the grand finale transition */
+        }
+
+        /* Grand Finale Background */
+        body.finale {
+            background: linear-gradient(-45deg, #ff80ab, #f50057, #c51162, #ff4081);
+            background-size: 400% 400%;
+            animation: gradientBG 5s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Glassmorphism Container */
+        .container {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(216, 27, 96, 0.15);
+            max-width: 650px;
+            width: 90%;
+            position: relative;
+            z-index: 10;
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.8s ease, transform 0.8s ease, background 1s ease;
+        }
+
+        .fade-out {
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Intro Animation */
+        .bouquet {
+            font-size: 90px;
+            margin-bottom: 10px;
+            animation: popIn 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            transform: scale(0);
+            filter: drop-shadow(0 10px 10px rgba(0,0,0,0.1));
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0) rotate(-15deg); opacity: 0; }
+            50% { transform: scale(1.1) rotate(10deg); }
+            100% { transform: scale(1) rotate(0deg); opacity: 1; }
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #c2185b;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+            line-height: 1.2;
+        }
+
+        /* Buttons */
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 25px;
+            align-items: center;
+        }
+
+        button {
+            background: linear-gradient(135deg, #f06292, #e91e63);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+            width: 80%;
+            max-width: 300px;
+            min-height: 50px; 
+        }
+
+        button:active { transform: scale(0.95); }
+
+        /* Heart Mini Game */
+        #interactive-heart {
+            font-size: 80px;
+            margin: 20px auto;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            filter: drop-shadow(0 5px 15px rgba(233, 30, 99, 0.2));
+        }
+
+        /* Interactive Envelope */
+        .envelope-icon {
+            font-size: 100px;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+            filter: drop-shadow(0 10px 15px rgba(216, 27, 96, 0.3));
+            transition: transform 0.3s ease;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Final Message Styling */
+        #final-message {
+            text-align: left;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #6a1b3d;
+            max-height: 65vh;
+            overflow-y: auto;
+            padding: 15px 25px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 15px;
+            border: 1px dashed #f06292;
+            scroll-behavior: smooth;
+        }
+
+        #final-message::-webkit-scrollbar { width: 6px; }
+        #final-message::-webkit-scrollbar-thumb { background: #f06292; border-radius: 10px; }
+
+        /* Typewriter Blinking Cursor */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 0.75s step-end infinite;
+            color: #e91e63;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* Cinematic Scroll Effect */
+        .letter-paragraph {
+            margin-bottom: 25px;
+            text-indent: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .letter-paragraph.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Secret Glowing Words */
+        .secret-word {
+            color: #e91e63;
+            font-weight: bold;
+            border-bottom: 2px dashed #f06292;
+            cursor: pointer;
+            animation: gentleGlow 2s infinite;
+            padding: 0 4px;
+            border-radius: 4px;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        @keyframes gentleGlow {
+            0%, 100% { background-color: transparent; }
+            50% { background-color: rgba(233, 30, 99, 0.15); }
+        }
+
+        /* Floating popup for secret words */
+        .secret-popup {
+            position: fixed;
+            background: #d81b60;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            pointer-events: none;
+            z-index: 9999;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            animation: floatUpFade 1.5s forwards;
+            text-align: center;
+        }
+
+        @keyframes floatUpFade {
+            0% { opacity: 0; transform: translate(-50%, 0) scale(0.8); }
+            20% { opacity: 1; transform: translate(-50%, -20px) scale(1.1); }
+            80% { opacity: 1; transform: translate(-50%, -40px) scale(1); }
+            100% { opacity: 0; transform: translate(-50%, -60px) scale(0.9); }
+        }
+
+        /* End Checkbox Interaction */
+        .promise-box {
+            margin-top: 30px;
+            text-align: center;
+            padding: 20px;
+            background: rgba(255,255,255,0.7);
+            border-radius: 15px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        
+        .promise-btn {
+            background: #fff;
+            color: #e91e63;
+            border: 2px solid #e91e63;
+            margin: 5px;
+            padding: 10px 20px;
+            width: auto;
+            min-height: 40px;
+        }
+
+        .promise-btn:active { background: #e91e63; color: #fff; }
+
+        /* Dodging Button */
+        #dodge-btn {
+            position: relative;
+            transition: transform 0.2s ease;
+            z-index: 50;
+        }
+
+        /* Love Coupon */
+        .coupon-wrapper {
+            margin-top: 30px;
+            background: repeating-linear-gradient(45deg, #ffb6c1, #ffb6c1 10px, #ffe4e1 10px, #ffe4e1 20px);
+            padding: 4px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s ease;
+            display: none; /* Hidden until finale */
+        }
+
+        .coupon-wrapper.visible {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .coupon-inner {
+            background: #fff;
+            border: 2px dashed #f06292;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .coupon-inner h3 { margin: 0 0 10px 0; color: #d81b60; font-family: 'Dancing Script', cursive; font-size: 2rem;}
+        .coupon-inner p { margin: 0; font-weight: bold; color: #880e4f; }
+
+        /* Falling Items */
+        .falling-item {
+            position: fixed;
+            top: -10vh;
+            pointer-events: none;
+            z-index: 1;
+            animation: fall linear forwards;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+
+        @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
+
+        /* Tap Burst Particles */
+        .burst-particle {
+            position: absolute;
+            pointer-events: none;
+            font-size: 20px;
+            z-index: 9999;
+            animation: popBurst 0.8s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+        }
+
+        @keyframes popBurst {
+            0% { opacity: 1; transform: translate(0, 0) scale(0.5); }
+            100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(1.5) rotate(var(--rot)); }
+        }
+
+        /* Drag/Hover Trail Sparkles */
+        .trail {
+            position: absolute;
+            pointer-events: none;
+            font-size: 15px;
+            z-index: 9998;
+            animation: fadeOut 1s ease-out forwards;
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0.5) translateY(20px); }
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="bg-music" src="song.mp3" loop></audio>
+
+    <div id="intro" class="container">
+        <div class="bouquet">💐</div>
+        <h1>Here's a flower for you, my queen.</h1>
+    </div>
+
+    <div id="q1" class="container fade-out hidden">
+        <h1>What day is it today?</h1>
+        <div class="btn-group">
+            <button onclick="wrongAnswer()">April 18, Saturday</button>
+            <button onclick="wrongAnswer()">April 19, Sunday</button>
+            <button onclick="switchStage('q1', 'q2')">April 20, Monday</button>
+        </div>
+    </div>
+
+    <div id="q2" class="container fade-out hidden">
+        <h1>What does this date mean?</h1>
+        <div class="btn-group" id="q2-buttons">
+            <button id="monthsary-btn" onclick="monthsaryClick()">Monthsary</button>
+            <button onclick="switchStage('q2', 'heart-stage')">Anniversary</button>
+        </div>
+    </div>
+
+    <div id="heart-stage" class="container fade-out hidden">
+        <h1>You answered correctly! 💖</h1>
+        <p style="font-size: 1.2rem;">Before you get your gift... tap to fill this heart with love!</p>
+        <div id="interactive-heart" onclick="tapHeart()">🤍</div>
+        <p id="heart-text" style="color: #e91e63; font-weight: bold; min-height: 24px;"></p>
+    </div>
+
+    <div id="envelope-stage" class="container fade-out hidden">
+        <h1 style="font-size: 2.5rem;">You unlocked it! ✨</h1>
+        <p style="font-size: 1.2rem; margin-bottom: 20px;">I wrote something for you. Tap to open...</p>
+        <div class="envelope-icon" onclick="showFinal()">💌</div>
+    </div>
+
+    <div id="final" class="container fade-out hidden">
+        <h1 id="finale-title" style="text-align: center; color: #d81b60; font-size: 3.2rem; transition: color 1s;">Happy Anniversary! 💖</h1>
+        <div id="final-message">
+            
+            <p id="typewriter-text" class="letter-paragraph visible typing-cursor" style="margin-bottom: 25px; text-indent: 20px;"></p>
+            
+            <div id="rest-of-letter" class="hidden">
+                <p class="letter-paragraph">You're truly such a <span class="secret-word" onclick="showSecret(event, 'You are my greatest gift! 🎁')">blessing</span> in my life, my love. In fact, I'd even say that you are indeed the biggest blessing that ever came to my life so far. I can spend my whole day just saying thank you for liking someone like me, someone who doesn't really stand out that much. In fact, I still don't understand how I got your interest. But that doesn't matter anymore as we are now officially entering our 1st year of life together in a relationship. I hope that you never get tired of loving me, understanding me, and everything. Always remember that you are truly one of a kind, my love. You're so unique that finding someone like you is definitely so hard these days. But oh well, I got so lucky that you came to me automatically.</p>
+                
+                <p class="letter-paragraph">I didn't even do anything yet, you came to me, got an interest on me, and started loving me. My decision of giving myself time to get to know you was correct after all. I'm proud to say that I don't regret every decision I've made so far. I'm just really happy to think that I'll be spending my future with someone like you, my love. Always remember that you stand above any other girl I've met as you are the only one who will be in that position.</p>
+                
+                <p class="letter-paragraph">You have everything that I am looking in a woman for, my love. So please, have confidence in yourself always. You are <span class="secret-word" onclick="showSecret(event, 'The most gorgeous girl in the world! 😍')">sooooooooo pretttyyy</span> in my eyes and that's what all matters. You're kind, pretty, sexy, and knows how to show respect which is what I admire the most of you. You're not like those other girls who acts like a brat MWAHAHAHAH.</p>
+                
+                <p class="letter-paragraph">Again, I appreciate everything that you do such as like preparing a gift message for our every monthsary. I just find most things that you do cute other than being pretty mwehehehe. My promise back then won't change and will never change. I do plan on <span class="secret-word" onclick="showSecret(event, 'I can\'t wait for that day! 💍')">marrying you someday</span>, living together with you in our own home, building our own family and getting old together. I promised to take care of you in a way that you deserve it, and that will never change. I love you sosososoossososososo muchhh, more than words can tell. Maybe kisses can say it mweheheheh. Anyways, Thank you for everything once again and looking forward for more and moreeeee monthsary and anniversary to come! I love you sososososoososos muchieee and HAPPY ANNIVERSARY, WIFEEYYY KOHHH</p>
+                
+                <div class="promise-box letter-paragraph" id="promise-section">
+                    <h3 style="font-family: 'Dancing Script', cursive; font-size: 1.8rem; margin: 0 0 15px 0;">Do you promise to love me forever?</h3>
+                    <button class="promise-btn" onclick="triggerFinale()">Yes, I promise! 🥰</button>
+                    <button class="promise-btn" id="dodge-btn">No way! 😝</button>
+                </div>
+
+                <div class="coupon-wrapper letter-paragraph" id="love-coupon">
+                    <div class="coupon-inner" id="coupon-inner" onclick="claimCoupon()">
+                        <h3>🎟️ Love Coupon 🎟️</h3>
+                        <p id="coupon-text">Tap to claim: One Free Romantic Date & Infinite Hugs!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth transition function
+        function switchStage(hideId, showId) {
+            const hideEl = document.getElementById(hideId);
+            const showEl = document.getElementById(showId);
+            hideEl.classList.add('fade-out');
+            setTimeout(() => {
+                hideEl.classList.add('hidden');
+                showEl.classList.remove('hidden');
+                setTimeout(() => showEl.classList.remove('fade-out'), 50);
+            }, 800); 
+        }
+
+        // Transition Intro -> Q1
+        setTimeout(() => switchStage('intro', 'q1'), 4500);
+
+        function wrongAnswer() { alert("Not quite, my love! Try again! 🌸"); }
+
+        // Monthsary Spam
+        let monthsaryClicks = 0;
+        function monthsaryClick() {
+            monthsaryClicks++;
+            const btn = document.getElementById('monthsary-btn');
+            if (monthsaryClicks === 1) { btn.innerText = "Are you sure?"; } 
+            else {
+                const spamMsg = document.createElement('div');
+                spamMsg.innerText = "Areeee youuu reallllyyy sureree?";
+                spamMsg.className = 'spam-text';
+                document.getElementById('q2-buttons').appendChild(spamMsg);
+            }
+        }
+
+        // Heart Mini-Game
+        let heartTaps = 0;
+        function tapHeart() {
+            heartTaps++;
+            const heart = document.getElementById('interactive-heart');
+            const text = document.getElementById('heart-text');
+            heart.style.transform = `scale(${1 + heartTaps * 0.15})`;
+            
+            if (heartTaps === 1) { heart.innerText = '🩷'; text.innerText = 'Keep going...'; }
+            if (heartTaps === 3) { heart.innerText = '💗'; text.innerText = 'Almost full...'; }
+            if (heartTaps === 4) { heart.innerText = '💖'; text.innerText = 'So close!'; }
+            if (heartTaps === 5) { 
+                heart.innerText = '💘'; text.innerText = 'Perfect! Unlock activated.';
+                heart.style.filter = "drop-shadow(0 0 30px rgba(233, 30, 99, 0.8))";
+                setTimeout(() => switchStage('heart-stage', 'envelope-stage'), 1000);
+            }
+        }
+
+        // Typewriter Effect Variables
+        const p1Text = "Happy Anniversary, my love! Today officially marks our 1st anniversary and I wanted to make it a bit special compared to our monthsarries. First of all, thank you so much for every effort that you've put in our relationship. I appreciate everything that you've done for this, for us. Thank you for always loving me. Thank you for liking me in the first place. If you didn't approach me that day in our 1st year intrams, all of this wouldn't have happened. I wouldn't have experienced such happiness in my life. I didn't know that love can feel this good. It's such a gentle and nice feeling to sleep and wake up every night and every day knowing that I have someone like you, who loves me a lot. Someone whose loyalty is mine alone.";
+        let i = 0;
+        const typeSpeed = 35; // milliseconds per letter
+
+        // Final Letter, Music, and Typewriter
+        function showFinal() {
+            switchStage('envelope-stage', 'final');
+            
+            // Play Background Music
+            const bgMusic = document.getElementById('bg-music');
+            bgMusic.volume = 0.5; 
+            bgMusic.play().catch(e => console.log("Audio block:", e));
+
+            setTimeout(startFallingEffects, 800); 
+            
+            // Start Typewriter after fade-in
+            setTimeout(typeWriter, 1000);
+        }
+
+        function typeWriter() {
+            const twElement = document.getElementById("typewriter-text");
+            if (i < p1Text.length) {
+                twElement.innerHTML += p1Text.charAt(i);
+                i++;
+                // Keep scroll at bottom while typing if she scrolls down
+                const msgBox = document.getElementById('final-message');
+                if (msgBox.scrollHeight - msgBox.scrollTop < msgBox.clientHeight + 50) {
+                    msgBox.scrollTop = msgBox.scrollHeight;
+                }
+                setTimeout(typeWriter, typeSpeed);
+            } else {
+                // Done typing
+                twElement.classList.remove('typing-cursor');
+                document.getElementById('rest-of-letter').classList.remove('hidden');
+                setupCinematicScroll();
+            }
+        }
+
+        // Cinematic Scroll
+        function setupCinematicScroll() {
+            const container = document.getElementById('final-message');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            }, { root: container, threshold: 0.1 }); 
+            document.querySelectorAll('.letter-paragraph').forEach(p => observer.observe(p));
+        }
+
+        // --- NEW: Dodging Button Logic ---
+        const dodgeBtn = document.getElementById('dodge-btn');
+        function moveButton() {
+            // Randomly jump left/right and up/down
+            const x = (Math.random() - 0.5) * 150; 
+            const y = (Math.random() - 0.5) * 100;
+            dodgeBtn.style.transform = `translate(${x}px, ${y}px)`;
+        }
+        // Triggers when mouse touches it (PC) or finger touches it (Mobile)
+        dodgeBtn.addEventListener('mouseover', moveButton);
+        dodgeBtn.addEventListener('touchstart', (e) => { e.preventDefault(); moveButton(); });
+
+        // --- NEW: Grand Finale Logic ---
+        function triggerFinale() {
+            // Change background and container style
+            document.body.classList.add('finale');
+            document.getElementById('final').style.background = "rgba(255, 255, 255, 0.85)";
+            document.getElementById('finale-title').style.color = "#c51162";
+
+            // Update promise box text
+            document.getElementById('promise-section').innerHTML = "<h3 style='font-family: \"Dancing Script\", cursive; font-size: 2.2rem; color: #c51162; margin: 0;'>I love you more!!! Mwahhh! 💋</h3>";
+            
+            // Massive Explosion
+            createMassiveExplosion();
+
+            // Reveal the Love Coupon after a short delay
+            setTimeout(() => {
+                const coupon = document.getElementById('love-coupon');
+                coupon.classList.add('visible');
+                // Scroll down to show coupon
+                const msgBox = document.getElementById('final-message');
+                msgBox.scrollTo({ top: msgBox.scrollHeight, behavior: 'smooth' });
+            }, 1500);
+        }
+
+        function createMassiveExplosion() {
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
+            const items = ['💖', '✨', '🎉', '🌸', '💘'];
+
+            for(let i = 0; i < 80; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'burst-particle';
+                particle.innerText = items[Math.floor(Math.random() * items.length)];
+                
+                // Blast in a huge radius
+                const tx = (Math.random() - 0.5) * window.innerWidth + 'px';
+                const ty = (Math.random() - 0.5) * window.innerHeight + 'px'; 
+                const rot = Math.random() * 720 + 'deg';
+                
+                particle.style.left = centerX + 'px';
+                particle.style.top = centerY + 'px';
+                particle.style.setProperty('--tx', tx);
+                particle.style.setProperty('--ty', ty);
+                particle.style.setProperty('--rot', rot);
+                // Make explosion particles last slightly longer
+                particle.style.animationDuration = (Math.random() * 1 + 0.5) + 's';
+                
+                document.body.appendChild(particle);
+                setTimeout(() => particle.remove(), 1500);
+            }
+        }
+
+        // Coupon Claim Logic
+        function claimCoupon() {
+            const inner = document.getElementById('coupon-inner');
+            const text = document.getElementById('coupon-text');
+            inner.style.background = "#e91e63";
+            inner.style.color = "white";
+            inner.style.border = "2px solid white";
+            text.style.color = "white";
+            inner.innerHTML = "<h3 style='color: white;'>🎟️ CLAIMED! 🎟️</h3><p style='color: white;'>Prepare for infinite kisses! 💋</p>";
+            
+            // Mini burst on claim
+            const rect = inner.getBoundingClientRect();
+            triggerMiniBurst(rect.left + rect.width/2, rect.top + rect.height/2);
+        }
+
+        // Tap Burst Particles (Standard)
+        document.addEventListener('click', function(e) {
+            if(e.target.tagName === 'BUTTON' || e.target.classList.contains('secret-word') || e.target.closest('.coupon-inner')) return;
+            triggerMiniBurst(e.clientX, e.clientY);
+        });
+
+        function triggerMiniBurst(x, y) {
+            const numParticles = Math.floor(Math.random() * 3) + 4; 
+            const items = ['💖', '✨', '🌸'];
+            for(let i = 0; i < numParticles; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'burst-particle';
+                particle.innerText = items[Math.floor(Math.random() * items.length)];
+                const tx = (Math.random() - 0.5) * 100 + 'px';
+                const ty = (Math.random() - 0.5) * 100 - 50 + 'px'; 
+                const rot = Math.random() * 360 + 'deg';
+                particle.style.left = x + 'px';
+                particle.style.top = y + 'px';
+                particle.style.setProperty('--tx', tx);
+                particle.style.setProperty('--ty', ty);
+                particle.style.setProperty('--rot', rot);
+                document.body.appendChild(particle);
+                setTimeout(() => particle.remove(), 800);
+            }
+        }
+
+        // Background Falling Effects
+        function startFallingEffects() {
+            setInterval(() => {
+                const item = document.createElement('div');
+                item.className = 'falling-item';
+                const items = ['🌸', '🌺', '💖', '💗', '🌷', '✨'];
+                item.innerText = items[Math.floor(Math.random() * items.length)];
+                item.style.left = Math.random() * 100 + 'vw';
+                item.style.animationDuration = Math.random() * 4 + 3 + 's'; 
+                item.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                document.body.appendChild(item);
+                setTimeout(() => item.remove(), 7000);
+            }, 400); 
+        }
+
+        // Secret Glowing Words
+        function showSecret(event, message) {
+            event.stopPropagation(); 
+            const popup = document.createElement('div');
+            popup.className = 'secret-popup';
+            popup.innerText = message;
+            popup.style.left = event.clientX + 'px';
+            popup.style.top = event.clientY + 'px';
+            document.body.appendChild(popup);
+            setTimeout(() => popup.remove(), 1500);
+        }
+
+        // Drag/Hover Finger Trail
+        function createTrail(x, y) {
+            if (Math.random() > 0.3) return; 
+            const trail = document.createElement('div');
+            trail.className = 'trail';
+            trail.innerText = Math.random() > 0.5 ? '✨' : '🌸';
+            trail.style.left = x + 'px';
+            trail.style.top = y + 'px';
+            document.body.appendChild(trail);
+            setTimeout(() => trail.remove(), 1000);
+        }
+
+        document.addEventListener('mousemove', function(e) { createTrail(e.pageX, e.pageY); });
+        document.addEventListener('touchmove', function(e) {
+            if (e.touches.length > 0) createTrail(e.touches[0].pageX, e.touches[0].pageY);
+        }, { passive: true });
+    </script>
+</body>
+</html>
