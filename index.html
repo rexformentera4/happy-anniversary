@@ -25,7 +25,7 @@
             text-align: center;
             color: #d81b60;
             touch-action: manipulation; 
-            transition: background 2s ease; /* For the grand finale transition */
+            transition: background 2s ease; 
         }
 
         /* Grand Finale Background */
@@ -269,7 +269,7 @@
             opacity: 0;
             transform: translateY(40px);
             transition: all 1s ease;
-            display: none; /* Hidden until finale */
+            display: none; 
         }
 
         .coupon-wrapper.visible {
@@ -378,13 +378,11 @@
             <p id="typewriter-text" class="letter-paragraph visible typing-cursor" style="margin-bottom: 25px; text-indent: 20px;"></p>
             
             <div id="rest-of-letter" class="hidden">
-                <p class="letter-paragraph">You're truly such a <span class="secret-word" onclick="showSecret(event, 'You are my greatest gift! 🎁')">blessing</span> in my life, my love. In fact, I'd even say that you are indeed the biggest blessing that ever came to my life so far. I can spend my whole day just saying thank you for liking someone like me, someone who doesn't really stand out that much. In fact, I still don't understand how I got your interest. But that doesn't matter anymore as we are now officially entering our 1st year of life together in a relationship. I hope that you never get tired of loving me, understanding me, and everything. Always remember that you are truly one of a kind, my love. You're so unique that finding someone like you is definitely so hard these days. But oh well, I got so lucky that you came to me automatically.</p>
+                <p class="letter-paragraph">You are truly the biggest <span class="secret-word" onclick="showSecret(event, 'You are my greatest gift! 🎁')">blessing</span> that has ever walked into my life. Sometimes, I still catch myself wondering how a guy like me—someone who doesn't really stand out—managed to catch the eye of someone so extraordinary. But you chose me. You gave me your heart, and giving myself the time to really get to know you was the best decision I have ever made. I have zero regrets. You are so uniquely wonderful, and finding a woman with your heart is so rare these days. I just got insanely lucky that you found your way to me. You stand far above anyone else I've ever met, and that is exactly where you will always stay: at the very top, holding my heart.</p>
                 
-                <p class="letter-paragraph">I didn't even do anything yet, you came to me, got an interest on me, and started loving me. My decision of giving myself time to get to know you was correct after all. I'm proud to say that I don't regret every decision I've made so far. I'm just really happy to think that I'll be spending my future with someone like you, my love. Always remember that you stand above any other girl I've met as you are the only one who will be in that position.</p>
+                <p class="letter-paragraph">You literally embody everything I have ever prayed for in a partner. You are incredibly kind, sexy, and you carry yourself with such a beautiful sense of respect—which is honestly what I admire about you the most. You aren't like anyone else, and I love how grounded and sweet you are. I want you to always have absolute confidence in yourself, because to me, you are <span class="secret-word" onclick="showSecret(event, 'The most gorgeous girl in the world! 😍')">sooooooooo pretttyyy</span>, and you are the only girl I will ever have eyes for. Every little thing you do is cute to me, especially the sweet efforts you make, like preparing those thoughtful gift messages for every single one of our monthsaries.</p>
                 
-                <p class="letter-paragraph">You have everything that I am looking in a woman for, my love. So please, have confidence in yourself always. You are <span class="secret-word" onclick="showSecret(event, 'The most gorgeous girl in the world! 😍')">sooooooooo pretttyyy</span> in my eyes and that's what all matters. You're kind, pretty, sexy, and knows how to show respect which is what I admire the most of you. You're not like those other girls who acts like a brat MWAHAHAHAH.</p>
-                
-                <p class="letter-paragraph">Again, I appreciate everything that you do such as like preparing a gift message for our every monthsary. I just find most things that you do cute other than being pretty mwehehehe. My promise back then won't change and will never change. I do plan on <span class="secret-word" onclick="showSecret(event, 'I can\'t wait for that day! 💍')">marrying you someday</span>, living together with you in our own home, building our own family and getting old together. I promised to take care of you in a way that you deserve it, and that will never change. I love you sosososoossososososo muchhh, more than words can tell. Maybe kisses can say it mweheheheh. Anyways, Thank you for everything once again and looking forward for more and moreeeee monthsary and anniversary to come! I love you sososososoososos muchieee and HAPPY ANNIVERSARY, WIFEEYYY KOHHH</p>
+                <p class="letter-paragraph">As we step into our second year together, I want you to know that my promise to you remains unbreakable. I am so ridiculously excited for our future. I truly do plan on <span class="secret-word" onclick="showSecret(event, 'I can\'t wait for that day! 💍')">marrying you someday</span>, building a beautiful home together, starting our own little family, and growing old by your side. I promise to always protect you, understand you, and take care of you the exact way a queen deserves to be treated. Words could never fully capture how much I love you, but I promise to spend the rest of my life showing you. Thank you for the best year of my life. I love you sososososoososos muchieee! HAPPY 1ST ANNIVERSARY, WIFEEYYY KOHHH! 💍💖</p>
                 
                 <div class="promise-box letter-paragraph" id="promise-section">
                     <h3 style="font-family: 'Dancing Script', cursive; font-size: 1.8rem; margin: 0 0 15px 0;">Do you promise to love me forever?</h3>
@@ -452,10 +450,10 @@
             }
         }
 
-        // Typewriter Effect Variables
-        const p1Text = "Happy Anniversary, my love! Today officially marks our 1st anniversary and I wanted to make it a bit special compared to our monthsarries. First of all, thank you so much for every effort that you've put in our relationship. I appreciate everything that you've done for this, for us. Thank you for always loving me. Thank you for liking me in the first place. If you didn't approach me that day in our 1st year intrams, all of this wouldn't have happened. I wouldn't have experienced such happiness in my life. I didn't know that love can feel this good. It's such a gentle and nice feeling to sleep and wake up every night and every day knowing that I have someone like you, who loves me a lot. Someone whose loyalty is mine alone.";
+        // --- NEW ENHANCED PARAGRAPH 1 FOR TYPEWRITER ---
+        const p1Text = "Happy 1st Anniversary, my beautiful queen! 💖 Today marks exactly one year of us, and I wanted to do something a little extra special to celebrate how far we've come. Looking back, I can't help but feel incredibly grateful for that very first day you approached me during our 1st-year intrams. If you hadn't taken that step, I would have missed out on the greatest happiness I've ever known. Before you, I truly didn't know love could feel this profound, this gentle, and this safe. There is no better feeling in the world than falling asleep and waking up every single day knowing I am loved by someone as fiercely loyal and amazing as you.";
         let i = 0;
-        const typeSpeed = 35; // milliseconds per letter
+        const typeSpeed = 35; 
 
         // Final Letter, Music, and Typewriter
         function showFinal() {
@@ -477,7 +475,7 @@
             if (i < p1Text.length) {
                 twElement.innerHTML += p1Text.charAt(i);
                 i++;
-                // Keep scroll at bottom while typing if she scrolls down
+                // Keep scroll at bottom while typing
                 const msgBox = document.getElementById('final-message');
                 if (msgBox.scrollHeight - msgBox.scrollTop < msgBox.clientHeight + 50) {
                     msgBox.scrollTop = msgBox.scrollHeight;
@@ -502,36 +500,29 @@
             document.querySelectorAll('.letter-paragraph').forEach(p => observer.observe(p));
         }
 
-        // --- NEW: Dodging Button Logic ---
+        // Dodging Button
         const dodgeBtn = document.getElementById('dodge-btn');
         function moveButton() {
-            // Randomly jump left/right and up/down
             const x = (Math.random() - 0.5) * 150; 
             const y = (Math.random() - 0.5) * 100;
             dodgeBtn.style.transform = `translate(${x}px, ${y}px)`;
         }
-        // Triggers when mouse touches it (PC) or finger touches it (Mobile)
         dodgeBtn.addEventListener('mouseover', moveButton);
         dodgeBtn.addEventListener('touchstart', (e) => { e.preventDefault(); moveButton(); });
 
-        // --- NEW: Grand Finale Logic ---
+        // Grand Finale Logic
         function triggerFinale() {
-            // Change background and container style
             document.body.classList.add('finale');
             document.getElementById('final').style.background = "rgba(255, 255, 255, 0.85)";
             document.getElementById('finale-title').style.color = "#c51162";
 
-            // Update promise box text
             document.getElementById('promise-section').innerHTML = "<h3 style='font-family: \"Dancing Script\", cursive; font-size: 2.2rem; color: #c51162; margin: 0;'>I love you more!!! Mwahhh! 💋</h3>";
             
-            // Massive Explosion
             createMassiveExplosion();
 
-            // Reveal the Love Coupon after a short delay
             setTimeout(() => {
                 const coupon = document.getElementById('love-coupon');
                 coupon.classList.add('visible');
-                // Scroll down to show coupon
                 const msgBox = document.getElementById('final-message');
                 msgBox.scrollTo({ top: msgBox.scrollHeight, behavior: 'smooth' });
             }, 1500);
@@ -547,7 +538,6 @@
                 particle.className = 'burst-particle';
                 particle.innerText = items[Math.floor(Math.random() * items.length)];
                 
-                // Blast in a huge radius
                 const tx = (Math.random() - 0.5) * window.innerWidth + 'px';
                 const ty = (Math.random() - 0.5) * window.innerHeight + 'px'; 
                 const rot = Math.random() * 720 + 'deg';
@@ -557,7 +547,6 @@
                 particle.style.setProperty('--tx', tx);
                 particle.style.setProperty('--ty', ty);
                 particle.style.setProperty('--rot', rot);
-                // Make explosion particles last slightly longer
                 particle.style.animationDuration = (Math.random() * 1 + 0.5) + 's';
                 
                 document.body.appendChild(particle);
@@ -575,12 +564,11 @@
             text.style.color = "white";
             inner.innerHTML = "<h3 style='color: white;'>🎟️ CLAIMED! 🎟️</h3><p style='color: white;'>Prepare for infinite kisses! 💋</p>";
             
-            // Mini burst on claim
             const rect = inner.getBoundingClientRect();
             triggerMiniBurst(rect.left + rect.width/2, rect.top + rect.height/2);
         }
 
-        // Tap Burst Particles (Standard)
+        // Tap Burst Particles
         document.addEventListener('click', function(e) {
             if(e.target.tagName === 'BUTTON' || e.target.classList.contains('secret-word') || e.target.closest('.coupon-inner')) return;
             triggerMiniBurst(e.clientX, e.clientY);
